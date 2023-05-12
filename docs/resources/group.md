@@ -1,4 +1,4 @@
-Response assessments are available through FHIR's [Group]( https://hl7.org/fhir/R4/group.html){:target="blank"}.
+The [Group]( https://hl7.org/fhir/R4/group.html){:target="blank"} resource is used to define a list of subjects for which lab, vital, response or medication data may be available.
 
 ## Request
 ```

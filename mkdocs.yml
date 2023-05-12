@@ -34,7 +34,7 @@ nav:
       - "Observation (Vitals)": resources/vital-sign.md
       - "Observation (Response Imaging)": resources/imaging.md
   - Structure Definitions: structure-definitions.md
-  - Errors: errors.md
+  - Error Handling: error-handling.md
   - "Release Notes": release-notes.md
   - "Contact Us": contact-us.md
 markdown_extensions:
