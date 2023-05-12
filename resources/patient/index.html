@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
     
     
       
@@ -293,6 +293,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../group/" class="md-nav__link">
+        Group
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -465,6 +479,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../error-handling/" class="md-nav__link">
+        Error Handling
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../release-notes/" class="md-nav__link">
         Release Notes
       </a>
@@ -578,6 +607,7 @@
 <h2 id="request">Request</h2>
 <div class="highlight"><pre><span></span><code>GET /msk-apim/external/v2/crit/blaze/api/Patient
 -H Authorization: Bearer {access_token}
+-H x-partnerid: {partnerId}
 </code></pre></div>
 <h3 id="query-parameters">Query Parameters</h3>
 <table>
@@ -620,10 +650,12 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RestClient</span><span class="p">(</span><span class="s">&quot;BASE_URL_PLUS_API_PATH?researchstudy={A1}&amp;x-partnerid={A2}&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RestClient</span><span class="p">(</span><span class="s">&quot;BASE_URL_PLUS_API_PATH?researchstudy={A1}&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">client</span><span class="p">.</span><span class="n">Timeout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">-</span><span class="m">1</span><span class="p">;</span><span class="w"></span>
 <span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span><span class="w"></span>
 <span class="n">request</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s">&quot;Authorization&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bearer {ACCESS_TOKEN}&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">request</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s">&quot;x-partnerid&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;{partnerId}&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="n">IRestResponse</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span><span class="w"></span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
@@ -639,14 +671,16 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">http.client</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s2">&quot;BASE_URL&quot;</span><span class="p">)</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer </span><span class="si">{ACCESS_TOKEN}</span><span class="s1">&#39;</span>
+<span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer </span><span class="si">{ACCESS_TOKEN}</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="s1">&#39;x-partnerid&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{partnerId}</span><span class="s1">&#39;</span>
 <span class="p">}</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;API_PATH?researchstudy=</span><span class="si">{A1}</span><span class="s2">&amp;x-partnerid=</span><span class="si">{A2}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;API_PATH?researchstudy=</span><span class="si">{A1}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
@@ -660,7 +694,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bundle&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mskcc.github.io/critfhirdeveloper/structure-definitions/#IDB.Protocol&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#IDB.Protocol&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
 <span class="p">},</span><span class="w"></span>
 <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;searchset&quot;</span><span class="p">,</span><span class="w"></span>
@@ -668,15 +702,15 @@
 <span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patients?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patient?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;first&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patients?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patient?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;last&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patients?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patient?researchstudy=FHIR-T&amp;page=1&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;relation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;previous&quot;</span><span class="p">,</span><span class="w"></span>
@@ -694,28 +728,28 @@
 <span class="w">            </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081001&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.hl7.org/fhir/patient.html&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/CodeSystem/v3-Race&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/ValueSet/v3-Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mskcc.github.io/critfhirdeveloper/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#IDB.Protocol&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Race&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://msk-blaze-docs.readthedocs.io/en/latest/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MSK Revenue Management System (RMS) via Clinical Research Database (CRDB) integration&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SubjectStudyId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081001&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;birthDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1988&quot;</span><span class="w"></span>
@@ -727,28 +761,28 @@
 <span class="w">            </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081004&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.hl7.org/fhir/patient.html&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/CodeSystem/v3-Race&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/ValueSet/v3-Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mskcc.github.io/critfhirdeveloper/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#IDB.Protocol&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Race&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://msk-blaze-docs.readthedocs.io/en/latest/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MSK Revenue Management System (RMS) via Clinical Research Database (CRDB) integration&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SubjectStudyId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081004&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;birthDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1976&quot;</span><span class="w"></span>
@@ -760,28 +794,28 @@
 <span class="w">            </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081007&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.hl7.org/fhir/patient.html&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/CodeSystem/v3-Race&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://terminology.hl7.org/ValueSet/v3-Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mskcc.github.io/critfhirdeveloper/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;valueCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#IDB.Protocol&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FHIR-T&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Race&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;White&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#Ethnicity&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NON&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SponsorID&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;valueString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C3861001&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">                </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://msk-blaze-docs.readthedocs.io/en/latest/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MSK Revenue Management System (RMS) via Clinical Research Database (CRDB) integration&quot;</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://fhir.mskcc.org/structure-definitions/#SubjectStudyId&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10081007&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">],</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nt">&quot;birthDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1948&quot;</span><span class="w"></span>
@@ -806,27 +840,27 @@
 </tr>
 <tr>
 <td><code>extension[0].url</code></td>
-<td>FHIR Patient documentation</td>
+<td>MSK Patient documentation</td>
 </tr>
 <tr>
 <td><code>extension[0].valueCode</code></td>
-<td>MSK unique study number</td>
+<td>MSK Protocol number</td>
 </tr>
 <tr>
 <td><code>extension[1].url</code></td>
-<td>FHIR Race documentation</td>
+<td>MSK Race documentation</td>
 </tr>
 <tr>
 <td><code>extension[1].valueCode</code></td>
-<td>FHIR Race code</td>
+<td>MSK Race code</td>
 </tr>
 <tr>
 <td><code>extension[2].url</code></td>
-<td>FHIR Ethnicity documentation</td>
+<td>MSK Ethnicity documentation</td>
 </tr>
 <tr>
 <td><code>extension[2].valueCode</code></td>
-<td>FHIR Ethnicity code</td>
+<td>MSK Ethnicity code</td>
 </tr>
 <tr>
 <td><code>extension[3].url</code></td>
@@ -838,11 +872,11 @@
 </tr>
 <tr>
 <td><code>identifier.system</code></td>
-<td></td>
+<td>MSK Subject Study Number Documentation</td>
 </tr>
 <tr>
 <td><code>identifier.value</code></td>
-<td>Data Source</td>
+<td>Subject Study Number</td>
 </tr>
 <tr>
 <td><code>gender</code></td>
@@ -869,7 +903,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../diagnostic-report/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Diagnostic Report (Response)" rel="prev">
+        <a href="../group/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Group" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -878,7 +912,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Diagnostic Report (Response)
+              Group
             </div>
           </div>
         </a>
@@ -977,7 +1011,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
       
     
   </body>
