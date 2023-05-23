@@ -24,6 +24,7 @@
 |[IDB.Protocol](#IDB.Protocol)                             | MSK unique study number                                                                    |
 |[InstanceNumber](#InstanceNumber)                         |  **                                                                                        |
 |[Intervention](#Intervention)                             | Adverse Event Intervention                                                                 |
+|[MetadataRuleDef](#MetadataRuleDef)					   | Metadata Rule Definition																	|
 |[Modality](#Modality)                                     | Type of scan `OT | MR | PT | CT`                                                           |
 |[Name](#Name)                                             | Assessment name `Baseline | Follow-up {1-25}`                                              |
 |[Organ](#Organ)                                           | Free text organ                                                                            |
