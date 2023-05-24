@@ -89,22 +89,22 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                 "id": "1294555",
                 "extension": [
                     {
-                        "url": "https://hl7.org/fhir/StructureDefinition/workflow-researchStudy",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#IDB.Protocol",
                         "valueCode": "FHIR-T"
                     },
                     {
-                        "url": "https://mskcc.github.io/critfhirdeveloper/identifiers/",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#SponsorID",
                         "valueCode": "C3861001"
                     },
                     {
-                        "url": "https://mskcc.github.io/critfhirdeveloper/identifiers/",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#MetadataRuleDef",
                         "valueCode": "40: end datetime derived: populated with idb.hml_client_prescription_hx.hcpx_hx_discontinued_dt when hcpr_status_type = 3 (Discontinued),18: days_supply derived: calculated by formula idb.hml_client_prescription.hcpr_duration_amt * (idb.hml_client_prescri"
                     }
                 ],
                 "identifier": [
                     {
                         "use": "official",
-                        "system": "https://fhir.mskcc.org/structure-definitions/#SponsorID",
+                        "system": "https://fhir.mskcc.org/structure-definitions/",
                         "value": "1294555drug_exposure"
                     }
                 ],
@@ -162,22 +162,22 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                 "id": "1427356",
                 "extension": [
                     {
-                        "url": "https://hl7.org/fhir/StructureDefinition/workflow-researchStudy",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#IDB.Protocol",
                         "valueCode": "FHIR-T"
                     },
                     {
-                        "url": "https://mskcc.github.io/critfhirdeveloper/identifiers/",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#SponsorID",
                         "valueCode": "C3861001"
                     },
                     {
-                        "url": "https://mskcc.github.io/critfhirdeveloper/identifiers/",
+                        "url": "https://fhir.mskcc.org/structure-definitions/#MetadataRuleDef",
                         "valueCode": "18: days_supply derived: calculated by formula idb.hml_client_prescription.hcpr_duration_amt * (idb.hml_client_prescription.hcpr_refills + 1)"
                     }
                 ],
                 "identifier": [
                     {
                         "use": "official",
-                        "system": "https://fhir.mskcc.org/structure-definitions/#SponsorID",
+                        "system": "https://fhir.mskcc.org/structure-definitions/",
                         "value": "1427356observation"
                     }
                 ],
