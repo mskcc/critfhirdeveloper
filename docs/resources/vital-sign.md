@@ -73,19 +73,11 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                 {
                   "relation": "last",
                   "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/observation?category=vital-signs&researchstudy=FHIR-T&page=1"
-                },
-                {
-                  "relation": "previous",
-                  "url": "null"
-                },
-                {
-                  "relation": "next",
-                  "url": "null"
                 }
                 ],
         "entry": [
             {
-                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=vital-signs&researchstudy=FHIR-T&Id=500000832",
+                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=vital-signs&researchstudy=FHIR-T&_Id=500000832",
                 "resource": {
                 "resourceType": "Observation",
                 "id": "500000832",
@@ -149,7 +141,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                 }
             },
             {
-                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=vital-signs&researchstudy=FHIR-T&Id=500000833",
+                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=vital-signs&researchstudy=FHIR-T&_Id=500000833",
                 "resource": {
                 "resourceType": "Observation",
                 "id": "500000833",

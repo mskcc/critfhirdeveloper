@@ -73,17 +73,13 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
           "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=FHIR-T&_count=3&page=347"
         },
         {
-          "relation": "previous",
-          "url": "null"
-        },
-        {
           "relation": "next",
           "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=FHIR-T&_count=3&page=2"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=FHIR-T&page=1&_count=3&Id=10081004",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=FHIR-T&page=1&_count=3&_Id=10081004",
             "resource": {
             "resourceType": "AdverseEvent",
             "id": "10081004",
@@ -169,7 +165,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             }
         },
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=fhir-t&page=1&_count=3&Id=10081004",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=fhir-t&page=1&_count=3&_Id=10081004",
             "resource": {
             "resourceType": "AdverseEvent",
             "id": "10081004",
@@ -255,7 +251,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
           }
         },
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=fhir-t&page=1&_count=3&Id=10081004",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/adverseevent?researchstudy=fhir-t&page=1&_count=3&_Id=10081004",
             "resource": {
             "resourceType": "AdverseEvent",
             "id": "10081004",

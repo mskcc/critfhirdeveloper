@@ -70,14 +70,6 @@ GET /msk-apim/external/v2/crit/blaze/api/Patient
         {
             "relation": "last",
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/patient?researchstudy=FHIR-T&page=1"
-        },
-        {
-            "relation": "previous",
-            "url": "null"
-        },
-        {
-            "relation": "next",
-            "url": "null"
         }
     ],
     "entry": [

@@ -73,17 +73,13 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&page=10"
         },
         {
-            "relation": "previous",
-            "url": "null"
-        },
-        {
             "relation": "next",
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&page=2"
         }
     ],
     "entry": [
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&Id=1294555",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&_Id=1294555",
             "resource": {
                 "resourceType": "MedicationStatement",
                 "id": "1294555",
@@ -156,7 +152,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             }
         },
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&Id=1427356",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/MedicationStatement?researchstudy=FHIR-T&_Id=1427356",
             "resource": {
                 "resourceType": "MedicationStatement",
                 "id": "1427356",
