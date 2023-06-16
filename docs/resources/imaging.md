@@ -72,17 +72,13 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&page=3"
             },
             {
-            "relation": "previous",
-            "url": "null"
-            },
-            {
             "relation": "next",
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&page=2"
             }
         ],
         "entry": [
             {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&Id=2441-10664-T02",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&_Id=2441-10664-T02",
             "resource": {
                 "resourceType": "Observation",
                 "extension": [
@@ -165,7 +161,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             }
             },
             {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&Id=2441-10664-T02",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?researchstudy=FHIR-T&category=imaging&_Id=2441-10664-T02",
             "resource": {
                 "resourceType": "Observation",
                 "extension": [

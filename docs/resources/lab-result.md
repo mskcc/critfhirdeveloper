@@ -77,17 +77,13 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
               "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&page=3"
             },
             {
-              "relation": "previous",
-              "url": "null"
-            },
-            {
               "relation": "next",
               "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&page=2"
             }
             ],
     "entry": [
         {
-                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&Id=500009866",
+                "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&_Id=500009866",
                 "resource": {
                 "resourceType": "Observation",
                 "id": "500009866",
@@ -155,7 +151,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
            }
         },
         {
-            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&Id=500009867",
+            "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/Observation?category=laboratory&researchstudy=FHIR-T&_Id=500009867",
             "resource": {
             "resourceType": "Observation",
             "id": "500009867",

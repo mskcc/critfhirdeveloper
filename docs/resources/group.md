@@ -70,14 +70,6 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
         {
             "relation": "last",
             "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/group?researchstudy=fhir-t&page=1"
-        },
-        {
-            "relation": "previous",
-            "url": "null"
-        },
-        {
-            "relation": "next",
-            "url": "null"
         }
         ],
         "entry": [

@@ -74,17 +74,13 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
         "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&page=2"
         },
         {
-        "relation": "previous",
-        "url": "null"
-        },
-        {
         "relation": "next",
         "url": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&page=2"
         }
     ],
     "entry": [
         {
-        "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&Id=790",
+        "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&_Id=790",
         "resource": {
             "resourceType": "DiagnosticReport",
             "extension": [
@@ -194,7 +190,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
         }
         },
         {
-        "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&Id=792",
+        "fullUrl": "https://apigateway.apps.stageapi.mskcc.org/msk-apim/external/v2/crit/blaze/api/DiagnosticReport?researchstudy=FHIR-T&_Id=792",
         "resource": {
             "resourceType": "DiagnosticReport",
             "extension": [
