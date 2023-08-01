@@ -4,13 +4,20 @@ Laboratory data are mapped to FHIR's [Observation](https://hl7.org/fhir/2021Mar/
 
 For guidance on mapping [LOINC](https://www.cdisc.org/kb/articles/loinc-and-sdtm) codes to [CDISC](https://datascience.cancer.gov/resources/cancer-vocabulary/cdisc-terminology) or for additional test information, such as the analyte measured or specimen type upon which the observation was made, check out [LOINC's FHIR terminology service](https://loinc.org/fhir/). 
 
-
 ## Request
 ```
 GET /msk-apim/external/v2/crit/blaze/api/observation
 -H Authorization: Bearer {access_token} 
 -H x-partnerid: {partnerId}
 ```
+
+```
+POST /msk-apim/external/v2/crit/blaze/api/observation/_search
+-H Authorization: Bearer {access_token} 
+-H x-partnerid: {partnerId}
+```
+> **_NOTE:_** Post method accepts query parameters in x-www-form-urlencoded format in the body of the request.
+
 ### Query Parameters
 | Parameters      | Type   | Is Required | Description                   |
 | --------------- | ------ | ----------- | ----------------------------- |
@@ -143,8 +150,19 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                   "value": 0,
                   "unit": "K/mcL"
                 },
+                "specimen": {
+                  "display": "21-348-00975"
+                },
                 "referenceRange": [
                   {
+                    "low": {
+                      "value": 0,
+                      "unit": "K/mcL"
+                    },
+                    "high": {
+                      "value": 0.2,
+                      "unit": "K/mcL"
+                    },
                     "text": "0.0-0.2"
                   }
               ]
@@ -208,13 +226,24 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                 }
             ],
             "valueQuantity": {
-                "value": 0.3,
-                "unit": "K/mcL"
+              "value": 0.3,
+              "unit": "K/mcL"
+            },
+            "specimen": {
+              "display": "21-348-00975"
             },
             "referenceRange": [
-                {
+              {
+                "low": {
+                  "value": 0,
+                  "unit": "K/mcL"
+                },
+                "high": {
+                  "value": 0.7,
+                  "unit": "K/mcL"
+                },
                 "text": "0.0-0.7"
-                }
+              }
             ]
           }
         }
@@ -248,6 +277,11 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
 | `valueQuantity.value`      | Numeric result                             |
 | `valueQuantity.unit`       | Test Unit                                  |
 | `valueString`              | Text result                                |
+| `specimen.display`         | Specimen Code                              |
+| `referenceRange.low.value` | Lower range value                          |
+| `referenceRange.low.unit`  | Lower range unit                           |
+| `referenceRange.high.value`| Upper range value                          |
+| `referenceRange.high.unit` | Upper range unit                           |
 | `referenceRange.text`      | Reference range                            |
 | `encounter.display`        | Protocol visit                             |
 | `performer.display`        | `Practitioner/` + Practitioner (CRT) ID    |
