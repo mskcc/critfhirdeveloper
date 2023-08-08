@@ -150,9 +150,6 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
                   "value": 0,
                   "unit": "K/mcL"
                 },
-                "specimen": {
-                  "display": "21-348-00975"
-                },
                 "referenceRange": [
                   {
                     "low": {
@@ -229,9 +226,6 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
               "value": 0.3,
               "unit": "K/mcL"
             },
-            "specimen": {
-              "display": "21-348-00975"
-            },
             "referenceRange": [
               {
                 "low": {
@@ -277,7 +271,6 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
 | `valueQuantity.value`      | Numeric result                             |
 | `valueQuantity.unit`       | Test Unit                                  |
 | `valueString`              | Text result                                |
-| `specimen.display`         | Specimen Code                              |
 | `referenceRange.low.value` | Lower range value                          |
 | `referenceRange.low.unit`  | Lower range unit                           |
 | `referenceRange.high.value`| Upper range value                          |
