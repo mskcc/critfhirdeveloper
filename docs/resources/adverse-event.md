@@ -331,7 +331,7 @@ For a list of optional filtering parameters visit the [Searching page](/searchin
             ],
             "study": [
               {
-                "reference": "Study/FHIR-P"
+                "reference": "Study/FHIR-T"
               }
             ]
           }
