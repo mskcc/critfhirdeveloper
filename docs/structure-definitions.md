@@ -28,6 +28,7 @@
 |[Modality](#Modality)                                     | Type of scan `OT | MR | PT | CT`                                                           |
 |[Name](#Name)                                             | Assessment name `Baseline | Follow-up {1-25}`                                              |
 |[Organ](#Organ)                                           | Free text organ                                                                            |
+|[Outcome](#Outcome)                                       | Adverse Event outcome values as listed in EPIC: `Death | Hospitalization | Prolongation of Hospitalization | Resolved with Sequelae | Resolved without Sequelae | Unkown`
 |[Race](#Race)                                             | Patient Race                                                                               |
 |[RevisionNumber](#RevisionNumber)                         | Case revision number <br/>Only the highest revision number is available at any given time  |
 |[RevisionDate](#RevisionDate)                             | Assessment revision date                                                                   |
