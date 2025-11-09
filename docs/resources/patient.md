@@ -7,6 +7,14 @@ GET /msk-apim/external/v2/crit/blaze/api/Patient
 -H Authorization: Bearer {access_token}
 -H x-partnerid: {partnerId}
 ```
+
+```
+POST /msk-apim/external/v2/crit/blaze/api/Patient/_search
+-H Authorization: Bearer {access_token} 
+-H x-partnerid: {partnerId}
+```
+> **_NOTE:_** Post method accepts query parameters in x-www-form-urlencoded format in the body of the request.
+
 ### Query Parameters
 | Parameters      | Type    | Is Required  | Description                          |
 | --------------  | ------- | ------------ | ------------------------------------ |

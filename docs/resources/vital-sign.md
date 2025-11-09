@@ -1,7 +1,6 @@
 
 Vital signs data are mapped to FHIR's [Observation](https://hl7.org/fhir/2021Mar/observation.html){:target="blank"} resource. Each record is mapped to a trial visit and pushed into the Clinical Research Data Warehouse.
 
-
 ## Request
 
 ```
@@ -9,6 +8,14 @@ GET /msk-apim/external/v2/crit/blaze/api/observation
 -H Authorization: Bearer {access_token} 
 -H x-partnerid: {partnerId}
 ```
+
+```
+POST /msk-apim/external/v2/crit/blaze/api/observation/_search
+-H Authorization: Bearer {access_token} 
+-H x-partnerid: {partnerId}
+```
+> **_NOTE:_** Post method accepts query parameters in x-www-form-urlencoded format in the body of the request.
+
 ### Query Parameters
 | Parameters      | Type   | Is Required | Description                       |
 | --------------- | ------ | ----------- | --------------------------------- |
